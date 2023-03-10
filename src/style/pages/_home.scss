@@ -1,0 +1,163 @@
+html {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(245, 245, 220);
+  font-weight: bold;
+}
+
+body {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.bodyBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  margin: 20px 0px;
+  padding: 0;
+  & li {
+    list-style-type: none;
+  }
+  @media (max-width: 440px) {
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    background-color: $white;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 30px 0px 15px;
+    z-index: 100;
+    transition: .3s;
+    transform: translate(0px, -100%);
+    &.active {
+      transform: translate(0px, 0px);
+    }
+    & li {
+      text-align: center;
+      height: 40px;
+      margin: 0px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.xButton {
+  display: none;
+  @media (max-width: 440px) {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40px;
+    cursor: pointer;
+    transition: .3s;
+    align-self: flex-end;
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
+  & span {
+    position: absolute;
+    right: 0px;
+    display: block;
+    width: 40px;
+    height: 5px;
+    background-color: $blue;
+    border-radius: 3px;
+    transition: .3s;
+  &:hover span {
+    transform: scale(0.9);
+  }
+  }
+
+  .xButtonSpan1 {
+    transform: rotate(45deg);
+  }
+  .xButtonSpan2 {
+    transform: rotate(-45deg);
+  }
+}
+
+.infoBar {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  color: $blue;
+  font-weight: normal;
+  .movesNum,
+  div {
+    display: flex;
+    width: 50%;
+    gap: 5px;
+  }
+  .moves {
+    justify-content: flex-end;
+  }
+  .movesNum {
+    font-weight: bold;
+    width: 20px;
+  }
+  .timeNum {
+    font-weight: bold;
+  }
+}
+
+.sizeInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $blue;
+  gap: 5px;
+  margin-bottom: 20px;
+  .sizeInfoText {
+    font-weight: normal;
+  }
+  @media (max-width: 440px) {
+    margin-bottom: 10px;
+  }
+}
+
+.sizeButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0px;
+  padding: 0;
+  & li {
+      list-style-type: none;
+    }
+  & div {
+    width: 60px;
+  }
+  @media (max-width: 440px) {
+    margin: 10px 0px;
+    gap: 10px;
+  & label {
+    width: 30px;
+    text-align: center;
+  }
+}
+}
+
+.numbers {
+  font-family: 'Roboto Mono', monospace;
+}
+
